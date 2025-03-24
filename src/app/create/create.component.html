@@ -1,0 +1,189 @@
+<main class="container-fluid p-0">
+  <div *ngIf="saved; else formTemplate">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: block;">
+      <div class="toast-body">
+        Neuer Eintrag von {{ parcel.firstname }} {{ parcel.lastname }} gespeichert.
+        <div class="mt-2 pt-2 border-top">
+          <button type="button" class="btn btn-success btn-sm" (click)="forward()">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #formTemplate>
+    <div class="container mt-5">
+      <div class="row mx-3 mb-4">
+        <div class="col-lg-10 col-sm-12 card mb-5 card-body">
+          <h3 class="text-center mb-4">Neue Bestellung aufnehmen</h3>
+          <form [formGroup]="form" (ngSubmit)="create()">
+            <hr>
+            <strong><h5>Kontaktdaten</h5></strong>
+            <div class="row">
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="firstname">Vorname</label>
+                <input type="text" class="form-control" id="firstname" placeholder="Vorname"
+                  formControlName="firstNameControl"
+                  [class.is-invalid]="form.controls.firstNameControl.invalid && form.controls.firstNameControl.touched"
+                  [class.is-valid]="form.controls.firstNameControl.valid && form.controls.firstNameControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Vorname eingeben!
+                </div>
+              </div>
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="lastname">Nachname</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Nachname"
+                  formControlName="lastNameControl"
+                  [class.is-invalid]="form.controls.lastNameControl.invalid && form.controls.lastNameControl.touched"
+                  [class.is-valid]="form.controls.lastNameControl.valid && form.controls.lastNameControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Nachname eingeben!
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="street">Straße</label>
+                <input type="text" class="form-control" id="street" placeholder="Straße" formControlName="streetControl"
+                  [class.is-invalid]="form.controls.streetControl.invalid && form.controls.streetControl.touched"
+                  [class.is-valid]="form.controls.streetControl.valid && form.controls.streetControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Straße eingeben!
+                </div>
+              </div>
+
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="housenumber">Hausnummer</label>
+                <input type="text" class="form-control" id="housenumber" placeholder="Hausnummer"
+                  formControlName="housenumberControl"
+                  [class.is-invalid]="form.controls.housenumberControl.invalid && form.controls.housenumberControl.touched"
+                  [class.is-valid]="form.controls.housenumberControl.valid && form.controls.housenumberControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Hausnummer eingeben!
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="plz">PLZ</label>
+                <input type="text" class="form-control" id="plz" placeholder="PLZ" formControlName="plzControl"
+                  [class.is-invalid]="form.controls.plzControl.invalid && form.controls.plzControl.touched"
+                  [class.is-valid]="form.controls.plzControl.valid && form.controls.plzControl.touched" required />
+                <div class="invalid-feedback">
+                  Bitte PLZ eingeben!
+                </div>
+              </div>
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="ort">Ort</label>
+                <input type="text" class="form-control" id="ort" placeholder="Ort" formControlName="ortControl"
+                  [class.is-invalid]="form.controls.ortControl.invalid && form.controls.ortControl.touched"
+                  [class.is-valid]="form.controls.ortControl.valid && form.controls.ortControl.touched" required />
+                <div class="invalid-feedback">
+                  Bitte Ort eingeben!
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <strong>
+              <h5>Verkaufsinformationen</h5>
+            </strong>
+            <div class="row">
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="date">Datum</label>
+                <input type="date" class="form-control" id="date" placeholder="Datum" formControlName="dateControl"
+                  [class.is-invalid]="form.controls.dateControl.invalid && form.controls.dateControl.touched"
+                  [class.is-valid]="form.controls.dateControl.valid && form.controls.dateControl.touched" required />
+                <div class="invalid-feedback">
+                  Bitte Datum eingeben!
+                </div>
+              </div>
+
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="platform">Verkaufs-Plattform</label>
+                <input type="text" class="form-control" id="platform" placeholder="Plattform"
+                  formControlName="platformControl"
+                  [class.is-invalid]="form.controls.platformControl.invalid && form.controls.platformControl.touched"
+                  [class.is-valid]="form.controls.platformControl.valid && form.controls.platformControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Verkaufs-Plattform eingeben!
+                </div>
+              </div>
+            </div>
+            <hr>
+            <strong>
+              <h5>Paket-Informationen</h5>
+            </strong>
+            <div class="row">
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="width">Breite </label>
+                <input type="text" class="form-control" id="width" placeholder="Breite" formControlName="widthControl"
+                  [class.is-invalid]="form.controls.widthControl.invalid && form.controls.widthControl.touched"
+                  [class.is-valid]="form.controls.widthControl.valid && form.controls.widthControl.touched" required />
+                <div class="invalid-feedback">
+                  Bitte Paket-Breite eingeben!
+                </div>
+              </div>
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="length">Länge</label>
+                <input type="text" class="form-control" id="length" placeholder="Länge" formControlName="lengthControl"
+                  [class.is-invalid]="form.controls.lengthControl.invalid && form.controls.lengthControl.touched"
+                  [class.is-valid]="form.controls.lengthControl.valid && form.controls.lengthControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Paket-Länge eingeben!
+                </div>
+              </div>
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="width">Höhe</label>
+                <input type="text" class="form-control" id="height" placeholder="Höhe" formControlName="heightControl"
+                  [class.is-invalid]="form.controls.heightControl.invalid && form.controls.heightControl.touched"
+                  [class.is-valid]="form.controls.heightControl.valid && form.controls.heightControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Paket-Höhe eingeben!
+                </div>
+              </div>
+
+              <div class="mb-3 col-lg">
+                <label class="form-label" for="weightInKG">Gewicht in kg</label>
+                <input type="text" class="form-control" id="weightinkg" placeholder="Gewicht"
+                  formControlName="parcelweightControl"
+                  [class.is-invalid]="form.controls.parcelweightControl.invalid && form.controls.parcelweightControl.touched"
+                  [class.is-valid]="form.controls.parcelweightControl.valid && form.controls.parcelweightControl.touched"
+                  required />
+                <div class="invalid-feedback">
+                  Bitte Paket-Gewicht eingeben!
+                </div>
+              </div>
+            </div>
+
+            <div formArrayName="parcelcontentControl">
+              <label class="form-label" for="parcelcontent">Paket-Inhalt</label>
+              <div *ngFor="let control of parcelcontentControl.controls; let i = index" class="mb-3">
+                <div class="input-group">
+                  <input type="text" [formControlName]="i" class="form-control" placeholder="Artikelname" />
+                  <button type="button" class="btn btn-outline-secondary fl" (click)="addParcelContentControl()">+</button>
+                  <button *ngIf="parcelcontentControl.length > 1" type="button" class="btn btn-outline-danger fl"
+                    (click)="removeParcelContentControl(i)">-</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <button type="submit" class="col-lg btn btn-success me-auto ms-auto" (click)="create()">Neuen Eintrag speichern</button>
+              <button type="button" class="col-lg btn btn-secondary me-auto ms-auto"
+                (click)="forward()">Abbrechen</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</main>

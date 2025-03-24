@@ -1,0 +1,13 @@
+main{
+    background-image: url('../../assets/background.jpg');
+    display: flex;
+}
+
+h5{
+    text-decoration: underline;
+    margin-bottom: 1%;
+}
+
+.fl{
+    font-size: 25px;
+}

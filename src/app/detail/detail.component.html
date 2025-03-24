@@ -1,0 +1,113 @@
+<main class="container-fluid p-0">
+  <div class="container mt-5">
+    <div class="row mb-4  ">
+      <div class="col-lg-10 col-sm-12 card mb-5 card-body">
+        @if(parcel) {
+        <legend class="card-title text-center mb-4">Eintrag des Pakets von {{ parcel.firstname }} {{
+          parcel.lastname }} aktualisieren
+        </legend>
+        } @else {
+        <legend class="card-title text-center mb-4">Eintrag aktualisieren</legend>
+        }
+        <form [formGroup]="form" (ngSubmit)="update()">
+
+          <hr>
+          <strong>
+            <h5>Kontaktdaten</h5>
+          </strong>
+          <div class="row">
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="firstname">Vorname</label>
+              <input type="text" class="form-control" id="firstname" placeholder="Vorname"
+                formControlName="firstNameControl" />
+            </div>
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="lastname">Nachname</label>
+              <input type="text" class="form-control" id="lastname" placeholder="Nachname"
+                formControlName="lastNameControl" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="street">Straße</label>
+              <input type="text" class="form-control" id="street" placeholder="Straße"
+                formControlName="streetControl" />
+            </div>
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="housenumbeer">Hausnummer</label>
+              <input type="text" class="form-control" id="housenumber" placeholder="Hausnummer"
+                formControlName="housenumberControl" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="plz">PLZ</label>
+              <input type="text" class="form-control" id="plz" placeholder="PLZ" formControlName="plzControl" />
+            </div>
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="ort">Ort</label>
+              <input type="text" class="form-control" id="ort" placeholder="Ort" formControlName="ortControl" />
+            </div>
+          </div>
+
+          <hr>
+          <strong>
+            <h5>Verkaufsinformationen</h5>
+          </strong>
+          <div class="row">
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="date">Datum</label>
+              <input type="date" class="form-control" id="date" placeholder="Datum" formControlName="dateControl" />
+            </div>
+            <div class="mb-3 col-lg">
+              <label class="col-form-label" for="platform">Verkaufs-Plattform</label>
+                <input type="text" class="form-control" id="platform" placeholder="Plattform"
+                formControlName="platformControl" />
+            </div>
+          </div>
+
+          <hr>
+          <strong>
+            <h5>Paket-Informationen</h5>
+          </strong>
+          <div class="row">
+            <div class="mb-3 col-lg">
+              <label class="form-label" for="width">Breite</label>
+              <input type="text" class="form-control" id="width" placeholder="Breite"
+                formControlName="parcelwidthControl" />
+            </div>
+            <div class="mb-3 col-lg">
+              <label class="form-label" for="length">Länge</label>
+              <input type="text" class="form-control" id="length" placeholder="Länge"
+                formControlName="parcellengthControl" />
+            </div>
+            <div class="mb-3 col-lg">
+              <label class="form-label" for="height">Höhe</label>
+              <input type="text" class="form-control" id="height" placeholder="Höhe"
+                formControlName="parcelheightControl" />
+            </div>
+            <div class="mb-3 col-lg">
+              <label class="form-label" for="weightInKg">Gewicht in kg</label>
+              <input type="text" class="form-control" id="weightInKg" placeholder="Gewicht in kg"
+                formControlName="parcelweightControl" />
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="form-label" for="parcelcontent">Paket-Inhalt</label>
+            <input type="text" class="form-control" id="parcelcontent" placeholder="Inhalt des Pakets"
+              formControlName="parcelcontentControl" />
+          </div>
+
+          <div class="row">
+            <button type="submit" class="col-lg-5 btn btn-success me-auto ms-auto mb-1">Aktualisieren</button>
+            <button type="button" class="col-lg-5 btn btn-secondary me-auto ms-auto mt-1"
+              (click)="cancel() ">Abbrechen</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

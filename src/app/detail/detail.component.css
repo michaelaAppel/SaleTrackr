@@ -1,0 +1,8 @@
+main{
+    background-image: url('../../assets/background.jpg');
+    display: flex;
+}
+
+legend {
+    font-weight: bold;
+}
