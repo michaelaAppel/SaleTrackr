@@ -34,7 +34,7 @@ Es wurde mit folgenden Technologien gearbeitet:
      ```
      
 3. **Datenbank konfigurieren**
-   Ändern Sie die Zugangsdaten in der Datei /backend/.env
+   - Ändern Sie die Zugangsdaten in der Datei /backend/.env
 
 4. **Backend starten**
    ```bash
