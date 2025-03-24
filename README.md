@@ -24,30 +24,29 @@ Es wurde mit folgenden Technologien gearbeitet:
 1. **Repository clonen**
    ```bash
    git clone https://github.com/michaelaAppel/SaleTrackr.git
-   cd 
+   cd SaleTrackr
    ```
 
 2. **Dependencies installieren**
    - Frontend:
      ```bash
-     cd frontend
+     cd src
      npm install
      ```
    - Backend:
      ```bash
      cd ../backend
-     npm install
+     in backend/.env Zugangsdaten eintragen
      ```
 
 3. **Backend starten**
    ```bash
-   cd backend
    node server.js
    ```
 
 4. **Frontend starten**
    ```bash
-   cd frontend
+   cd ..
    ng serve
    ```
 
