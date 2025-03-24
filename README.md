@@ -28,7 +28,6 @@ Es wurde mit folgenden Technologien gearbeitet:
    ```
 
 2. **Dependencies installieren**
-   - Frontend:
      ```bash
      cd src
      npm install
