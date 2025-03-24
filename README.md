@@ -33,24 +33,22 @@ Es wurde mit folgenden Technologien gearbeitet:
      cd src
      npm install
      ```
-   - Backend:
-     ```bash
-     cd ../backend
-     in backend/.env Zugangsdaten eintragen
-     ```
+     
+3. **Datenbank konfigurieren**
+   Ändern Sie die Zugangsdaten in der Datei /backend/.env
 
-3. **Backend starten**
+4. **Backend starten**
    ```bash
    node server.js
    ```
 
-4. **Frontend starten**
+5. **Frontend starten**
    ```bash
    cd ..
    ng serve
    ```
 
-5. **Anwendung starten**
+7. **Anwendung starten**
    - Öffnen Sie im Browser: [http://localhost:4200](http://localhost:4200)
 
 ## Verwendete KI-Tools
