@@ -26,6 +26,7 @@ export class TableComponent implements OnInit{
     this.bs.getAll()
     .then( response => {
     this.parcels= response;
+    this.sortParcelsByDate();
   })
     .then( parcels => console.log(' parcels in TableComponent : ', parcels ))   
   }
@@ -54,5 +55,14 @@ export class TableComponent implements OnInit{
   cancel() {
     this.deleteStatus = false;
   }
+
+  private sortParcelsByDate(): void {
+    this.parcels.sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return dateB - dateA;
+    });
+  }
+
 
   }
