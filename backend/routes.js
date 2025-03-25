@@ -97,12 +97,12 @@ router.put('/parcels/:id', async (req, res) => {
         parcellength=$10,
         parcelheight=$11,
         weightinkg=$12, 
-        parcelcontent=$13,
-        WHERE id=$12;`;
+        parcelcontent=$13
+        WHERE id=$14;`;
         const updateresult = await client.query(updatequery, [date, platform, street, housenumber, plz, ort, 
             firstname, lastname, parcelwidth, parcellength, parcelheight, weightinkg, parcelcontent, id]);
         console.log(updateresult)
-        res.send({ id, date, platform, street, housenumber, plz, ort, firstname, lastname, parcelwidth, 
+        res.send({ date, platform, street, housenumber, plz, ort, firstname, lastname, parcelwidth, 
             parcellength, parcelheight, weightinkg, parcelcontent });
     }
     else {
