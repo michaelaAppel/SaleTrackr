@@ -18,7 +18,7 @@
                 <li class="list-group-item" *ngFor="let parcel of parcels" [routerLink]="['/parcel',parcel.id]">Verkauf
                   am {{ parcel.date | date:'dd.MM.yyyy'}} auf {{ parcel.platform }} an {{ parcel.firstname }}
                   {{parcel.lastname}}
-                  <i class="bi bi-search"></i>
+                  <i class="bi bi-search clickable-icon"></i>
                 </li>
               </ul>
             </div>
