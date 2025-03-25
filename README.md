@@ -38,6 +38,7 @@ Es wurde mit folgenden Technologien gearbeitet:
 
 4. **Backend starten**
    ```bash
+   cd ../backend
    node server.js
    ```
 
